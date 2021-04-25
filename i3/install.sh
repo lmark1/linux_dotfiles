@@ -27,3 +27,12 @@ sudo apt-get -y install lxappearance
 
 # install useful gui utils
 sudo apt-get -y install thunar rofi compton systemd
+
+# copy fonts
+# fontawesome 4.7
+mkdir -p ~/.fonts
+cp $APP_PATH/fonts/* ~/.fonts/
+
+# link fonts.conf file
+mkdir -p ~/.config/fontconfig
+ln -sf $APP_PATH/fonts.conf ~/.config/fontconfig/fonts.conf
