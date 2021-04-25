@@ -1,2 +1,2 @@
-# linux_dotfiles
+# Linux Dotfiles
 All of my personal dotfiles.
