@@ -6,6 +6,7 @@ All of the dotfiles used for setting up Ubuntu Linux 20.04 programs.
 * [zsh & ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
 * [NeoVim](https://github.com/neovim/neovim)
 * [tmux & tmuxinator](https://github.com/tmux/tmux)
+* [i3](https://i3wm.org/)
 
 ## Credits
 
