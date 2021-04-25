@@ -198,4 +198,4 @@ bindsym XF86AudioPrev exec playerctl previous
 
 exec xrandr --output eDP-1-1 --set "PRIME Synchronization" 1
 
-#bindsym $mod+Shift+p exec ~/i3-layout-manager/layout_manager.sh
+bindsym $mod+Shift+p exec ~/.config/i3/layout_manager.sh
