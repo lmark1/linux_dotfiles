@@ -1,6 +1,22 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# if nvim is present, use it!
+if [ -x "$(command -v nvim)" ]; then
+  export EDITOR="/usr/bin/nvim"
+else
+  export EDITOR="/usr/bin/vim"
+fi
+
+# set the TMUX_BIN, prefer the user-compiled one
+[ -f /usr/local/bin/tmux ] && export TMUX_BIN=/usr/local/bin/tmux
+[ ! -f /usr/local/bin/tmux ] && export TMUX_BIN=/usr/bin/tmux
+
+# is the shell running interactively
+case "$-" in
+  *i*) INTERACTIVE_SHELL=1
+esac
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -100,6 +116,14 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Source general scripts
+source ~/linux_dotfiles/zsh/general.sh
+
+# create alisases
+alias sb="source ~/.zshrc"
+alias vim=runVim
+alias vimdiff="vim -d"
+
 # Vi mode in ZSH
 bindkey -v
 
@@ -117,4 +141,14 @@ historyRead() {
 }
 alias history='historyRead'
 
-source ~/linux_dotfiles/zsh/general.sh
+# load tmux automatically
+export RUN_TMUX="true"
+if [ ! -z "$INTERACTIVE_SHELL" ]; then # when loaded interactively, run tmux
+  if [ "$RUN_TMUX" = "true" ]; then
+    if command -v $TMUX_BIN>/dev/null; then
+        [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && runTmux
+    fi
+  fi
+fi
+
+true # so that this script returns 0
