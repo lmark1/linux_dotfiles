@@ -9,4 +9,9 @@ trap 'echo "$0: \"${last_command}\" command failed with exit code $?"' ERR
 APP_PATH=`dirname "$0"`
 APP_PATH=`( cd "$APP_PATH" && pwd )`
 
-ln -sf $APP_PATH/dotzshrc ~/.zshrc
+if [ -f $HOME/.zshrc ]; then
+    num=`cat $HOME/.zshrc | grep "dotzshrc" | wc -l`
+    if [ "$num" -lt "1" ]; then
+      echo "source $APP_PATH/dotzshrc" >> ~/.zshrc
+    fi
+fi
