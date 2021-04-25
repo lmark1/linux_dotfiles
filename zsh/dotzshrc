@@ -116,3 +116,5 @@ historyRead() {
   eval 'print $@'
 }
 alias history='historyRead'
+
+source ~/linux_dotfiles/zsh/general.sh
