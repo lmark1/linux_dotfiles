@@ -36,3 +36,6 @@ cp $APP_PATH/fonts/* ~/.fonts/
 # link fonts.conf file
 mkdir -p ~/.config/fontconfig
 ln -sf $APP_PATH/fonts.conf ~/.config/fontconfig/fonts.conf
+
+# For screenshots
+sudo apt -y install maim
