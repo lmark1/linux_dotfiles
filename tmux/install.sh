@@ -13,5 +13,4 @@ echo "$0: Installing tmux and tmuxinator"
 sudo apt-get -y install tmux tmuxinator
 
 FILE=$HOME/.tmux.conf
-echo "$0: copying .tmux.conf"
-ln -sf $MY_PATH/dottmux.conf $FILE
+[ ! -e "$FILE" ] && ln -sf $MY_PATH/dottmux.conf $FILE && echo "$0: copying .tmux.conf"
