@@ -11,7 +11,9 @@ APP_PATH=`( cd "$APP_PATH" && pwd )`
 
 ln -fs $APP_PATH/doti3config ~/.config/i3/config
 ln -fs $APP_PATH/doti3blocks ~/.config/i3/i3blocks.conf
-ln -fs $APP_PATH/i3-layout-manager/layout_manager.sh ~/.config/i3/layout_manager.sh
+
+MANAGER_PATH=`( cd $APP_PATH/../submodules/i3-layout-manager && pwd )`
+ln -fs $MANAGER_PATH/layout_manager.sh ~/.config/i3/layout_manager.sh
 
 # to run the setBrightness.sh
 # add following lines to /etc/sudoers below the line: %sudo	ALL=(ALL:ALL) ALL

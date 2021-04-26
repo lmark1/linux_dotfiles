@@ -1,3 +1,6 @@
-[submodule "i3/i3-layout-manager"]
-	path = i3/i3-layout-manager
+[submodule "submodules/i3-layout-manager"]
+	path = submodules/i3-layout-manager
 	url = git@github.com:klaxalk/i3-layout-manager.git
+[submodule "submodules/Vundle.vim"]
+	path = submodules/Vundle.vim
+	url = git@github.com:VundleVim/Vundle.vim.git
