@@ -28,6 +28,8 @@ source $GIT_PATH/linux_dotfiles/zsh/general.sh
 alias sb="source ~/.zshrc"
 alias vim=runVim
 alias vimdiff="vim -d"
+alias cbt="catkin build --this"
+alias catkin_src="roscd && cd ../src"
 
 # Vi mode in ZSH
 bindkey -v
