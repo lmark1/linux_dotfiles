@@ -50,7 +50,21 @@ echo "options rtl8822be aspm=0 ips=N" | sudo tee /etc/modprobe.d/rtl8822be.conf
 # 5) Reboot
 options rtl8822be aspm=0 ips=N
 
-# 6) Reboot! Hopefully wifi works properly now.
+# 6) Reboot! Hopefully wifi works properly now. (or not :P)
+```
+
+In ```/etc/default/grub``` make the following change:
+```bash
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash pcie_aspm.policy=performance mem_sleep_default=deep"
+```
+
+At the end of  ```/etc/modprobe.d/blacklist.conf``` add following lines:
+```bash
+blacklist amd76x_edac
+blacklist btrtl
+blacklist btusb
+blacklist ideapad-laptop
+blacklist ucsi_ccg
 ```
 
 ## Credits
