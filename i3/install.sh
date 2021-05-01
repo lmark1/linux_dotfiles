@@ -39,3 +39,6 @@ ln -sf $APP_PATH/fonts.conf ~/.config/fontconfig/fonts.conf
 
 # For screenshots
 sudo apt -y install maim
+
+# For player
+sudo apt install playerctl
