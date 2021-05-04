@@ -21,7 +21,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Source general scripts
-export GIT_PATH=$HOME
+export GIT_PATH=$HOME/Github
 source $GIT_PATH/linux_dotfiles/zsh/general.sh
 
 # create alisases
