@@ -35,6 +35,11 @@ set hlsearch
 set ignorecase
 set incsearch
 
+" " Setup tabs
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
 " " Copy to clipboard
 vnoremap  <leader>y  "+y
 nnoremap  <leader>Y  "+yg_
