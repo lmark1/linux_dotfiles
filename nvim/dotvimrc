@@ -37,11 +37,6 @@ set hlsearch
 set ignorecase
 set incsearch
 
-" " Setup tabs
-set tabstop=2
-set shiftwidth=2
-set expandtab
-
 " " Copy to clipboard
 vnoremap  <leader>y  "+y
 nnoremap  <leader>Y  "+yg_
@@ -54,8 +49,15 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
+" " Setup tabs
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
 " " vim - indent - guides
-set ts=4 sw=4
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
+
+autocmd BufEnter *.launch :setlocal filetype=xml
+autocmd BufEnter *.urdf :setlocal filetype=xml
