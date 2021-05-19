@@ -53,6 +53,42 @@ runTmux() {
   fi
 }
 
+forceKillTmuxSession() {
+
+  num=`$TMUX_BIN ls 2> /dev/null | grep "$1" | wc -l`
+  if [ "$num" -gt "0" ]; then
+
+    pids=`tmux list-panes -s -t "$1" -F "#{pane_pid} #{pane_current_command}" | grep -v tmux | awk '{print $1}'`
+
+    for pid in "$pids"; do
+      killp "$pid"
+    done
+
+    $TMUX_BIN kill-session -t "$1"
+
+  fi
+}
+
+quitTmuxSession() {
+
+  if [ ! -z "$TMUX" ]; then
+
+    echo "killing session"
+    pids=`tmux list-panes -s -F "#{pane_pid} #{pane_current_command}" | grep -v tmux | awk {'print $1'}`
+
+    for pid in $pids; do
+      killp "$pid" &
+    done
+
+    SESSION_NAME=`tmux display-message -p '#S'`
+    tmux kill-session -t "$SESSION_NAME"
+
+  else
+
+    exit
+
+  fi
+}
 
 zshexit() {
 
