@@ -1,3 +1,8 @@
+mycd() {
+  \cd "$@"
+  [ -n "$TMUX" ] && tmux set-environment -g PWD $PWD
+}
+
 killp() {
 
   if [ $# -eq 0 ]; then
