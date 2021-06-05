@@ -9,9 +9,22 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
+" Vim-friendly navigation of tmux environment
 Plugin 'christoomey/vim-tmux-navigator'
+
+" Python autocomplete
 Plugin 'davidhalter/jedi-vim'
+
+" Pretty Vim indentations
 Plugin 'nathanaelkane/vim-indent-guides'
+
+" Pretty Vim status bar
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+" file manager (leader+n)
+Plugin 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
