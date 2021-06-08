@@ -74,3 +74,11 @@ let g:indent_guides_guide_size = 1
 
 autocmd BufEnter *.launch :setlocal filetype=xml
 autocmd BufEnter *.urdf :setlocal filetype=xml
+
+" NERDtree config
+
+" open new tab and run nerdtree
+nmap <leader>t :tabedit<cr>:NERDTreeToggle<cr>
+
+" nerd tree toggle binding
+nnoremap <leader>n :NERDTreeToggle<CR>
