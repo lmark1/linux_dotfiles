@@ -31,7 +31,6 @@ alias vimdiff="vim -d"
 alias cbt="catkin build --this"
 alias cbt_debug="catkin build --this --cmake-args -DCMAKE_BUILD_TYPE=Debug"
 alias catkin_src="roscd && cd ../src"
-alias cd=mycd
 
 # Vi mode in ZSH
 bindkey -v

@@ -1,7 +1,85 @@
-mycd() {
-  \cd "$@"
-  [ -n "$TMUX" ] && tmux set-environment -g PWD $PWD
+# Source github.com/ctu-mrs/uav_core
+
+# #{ cd()
+
+SYMLINK_ARRAY_PATH="/tmp/symlink_array.sh"
+
+# generate the symlink list
+# if we are not in TMUX
+if [ -z $TMUX ]; then
+
+  # and the symlinklist does not exist
+  if [ ! -f "$SYMLINK_ARRAY_PATH" ]; then
+
+    # create the symlink list
+    $GIT_PATH/linux_dotfiles/zsh/detacher.sh $GIT_PATH/linux_dotfiles/zsh/createRosSymlinkDatabase.sh
+  fi
+fi
+
+# if the array file exists, just source it
+[ -f "$SYMLINK_ARRAY_PATH" ] && source $SYMLINK_ARRAY_PATH
+
+cd() {
+
+  [ -z "$SYMLINK_LIST_PATHS1" ] && [ -f "$SYMLINK_ARRAY_PATH" ] && source $SYMLINK_ARRAY_PATH
+
+  if [ -z "$SYMLINK_LIST_PATHS1" ]; then
+
+    builtin cd "$@"
+    return
+
+    # if we have ag, do the magic
+  else
+
+    builtin cd "$@"
+    new_path=`pwd`
+
+    # test original paths for prefix
+
+    case "$SHELL" in
+      *bash*)
+        fucking_shell_offset="0"
+        ;;
+      *zsh*)
+        fucking_shell_offset="1"
+        ;;
+    esac
+
+    # echo ""
+    j="1"
+
+    for ((i=$fucking_shell_offset; i < ${#SYMLINK_LIST_PATHS1[*]}+$fucking_shell_offset; i++));
+    do
+
+      temp=${SYMLINK_LIST_PATHS2[$i]}
+
+      if [[ $new_path == *$temp* ]]
+      then
+
+        # echo "found prefix: ${SYMLINK_LIST_PATHS1[$i]} -> $temp for $new_path"
+        # echo substracted: ${new_path#*$temp}
+        repath[$j]="${SYMLINK_LIST_PATHS1[$i]}${new_path#*$temp}"
+        # echo new_path: ${repath[$j]}
+        new_path=${repath[$j]}
+        j=$(expr $j + 1)
+        # echo ""
+
+      fi
+
+    done
+
+    if [ "$j" -ge "2" ]
+    then
+      builtin cd "$new_path"
+    fi
+  fi
 }
+
+
+CURRENT_PATH=`pwd`
+cd "$CURRENT_PATH"
+
+# #}
 
 killp() {
 
