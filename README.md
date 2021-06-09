@@ -13,6 +13,8 @@ All of the dotfiles used for setting up Ubuntu Linux 20.04 programs.
 First clone the repository as follows:
 
 ```bash
+mkdir ~/Github
+cd ~/Github
 git clone https://github.com/lmark1/linux_dotfiles
 cd linux_dotfiles
 git submodule update --init --recursive
