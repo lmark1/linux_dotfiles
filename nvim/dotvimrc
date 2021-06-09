@@ -26,6 +26,18 @@ Plugin 'vim-airline/vim-airline-themes'
 " file manager (leader+n)
 Plugin 'scrooloose/nerdtree'
 
+" fugitive.vim: a Git wrapper so awesome, it should be illegal
+Plugin 'tpope/vim-fugitive'
+
+" Clever motions helper
+" highlights letters while using f, t motions
+Plugin 'unblevable/quick-scope'
+
+" C++ autocomplete
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator'
+
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -72,8 +84,24 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 
+" " Set filetypes for launch and urdf files
 autocmd BufEnter *.launch :setlocal filetype=xml
 autocmd BufEnter *.urdf :setlocal filetype=xml
+
+" " Set airline
+let g:airline_theme='papercolor'
+
+" running airline
+set laststatus=2					" allow running without splitting
+
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+" used patched fonts with special characters
+let g:airline_powerline_fonts = 1
 
 " NERDtree config
 

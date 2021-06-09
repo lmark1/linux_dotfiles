@@ -23,6 +23,17 @@ git submodule update --init --recursive
 Go to a desired folder and start executing scripts!  
 **NOTE** Some programs may be dependant on others.
 
+After running Vim for the first time remember to:
+```bash
+:PluginInstall
+```
+
+To compile ```YouCompleteMe``` Vim plugin run the following:
+```bash
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --clang-completer --system-libclang
+```
+
 ## Troubleshooting 
 
 ### How to make Lenovo Legion work properly for Ubuntu Linux 20.04 - 5.8.0-50-generic kernel - Realtek RTL8822BE WiFi Adapter?
