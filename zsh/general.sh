@@ -1,6 +1,12 @@
 # Source github.com/ctu-mrs/uav_core
 
 # #{ cd()
+if [ "$FANCY_CD" = "true" ]; then
+  function set_tmux_pwd() {
+      [ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD"
+      return 0
+  }
+  set_tmux_pwd
 
 SYMLINK_ARRAY_PATH="/tmp/symlink_array.sh"
 
@@ -20,12 +26,12 @@ fi
 [ -f "$SYMLINK_ARRAY_PATH" ] && source $SYMLINK_ARRAY_PATH
 
 cd() {
-
   [ -z "$SYMLINK_LIST_PATHS1" ] && [ -f "$SYMLINK_ARRAY_PATH" ] && source $SYMLINK_ARRAY_PATH
 
   if [ -z "$SYMLINK_LIST_PATHS1" ]; then
 
     builtin cd "$@"
+      set_tmux_pwd
     return
 
     # if we have ag, do the magic
@@ -73,12 +79,13 @@ cd() {
       builtin cd "$new_path"
     fi
   fi
+    set_tmux_pwd
 }
 
 
 CURRENT_PATH=`pwd`
 cd "$CURRENT_PATH"
-
+fi
 # #}
 
 killp() {

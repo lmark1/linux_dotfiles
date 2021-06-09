@@ -22,6 +22,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Source general scripts
 export GIT_PATH=$HOME/Github
+export FANCY_CD="true"
 source $GIT_PATH/linux_dotfiles/zsh/general.sh
 
 # create alisases
