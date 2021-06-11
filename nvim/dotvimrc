@@ -13,9 +13,6 @@ Plugin 'VundleVim/Vundle.vim'
 " Vim-friendly navigation of tmux environment
 Plugin 'christoomey/vim-tmux-navigator'
 
-" Python autocomplete
-Plugin 'davidhalter/jedi-vim'
-
 " Pretty Vim indentations
 Plugin 'nathanaelkane/vim-indent-guides'
 
@@ -37,6 +34,8 @@ Plugin 'unblevable/quick-scope'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 
+" better highlighting for c++11/14/17
+Plugin 'octol/vim-cpp-enhanced-highlight'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

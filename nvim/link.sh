@@ -12,3 +12,7 @@ APP_PATH=`( cd "$APP_PATH" && pwd )`
 mkdir -p ~/.config/nvim/
 ln -sf ~/.vimrc ~/.config/nvim/init.vim
 ln -sf $APP_PATH/dotvimrc ~/.vimrc
+
+# link .ycm_extra_conf.py
+ln -fs $APP_PATH/dotycm_extra_conf.py ~/.ycm_extra_conf.py
+
