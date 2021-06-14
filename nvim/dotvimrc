@@ -33,6 +33,11 @@ Plugin 'unblevable/quick-scope'
 " C++ autocomplete
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
+source $GIT_PATH/linux_dotfiles/nvim/youcompleteme.vim
+
+" Vim-ros 
+Plugin 'klaxalk/vim-ros'
+source $GIT_PATH/linux_dotfiles/nvim/vim-ros.vim
 
 " better highlighting for c++11/14/17
 Plugin 'octol/vim-cpp-enhanced-highlight'
