@@ -14,5 +14,5 @@ ln -sf ~/.vimrc ~/.config/nvim/init.vim
 ln -sf $APP_PATH/dotvimrc ~/.vimrc
 
 # link .ycm_extra_conf.py
-ln -fs $APP_PATH/dotycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
-
+ln -fs $APP_PATH/dotycm_extra_conf.py ~/.ycm_extra_conf.py
+ln -fs $APP_PATH/default_ycm_extra_conf.py ~/.vim/default_ycm_extra_conf.py
