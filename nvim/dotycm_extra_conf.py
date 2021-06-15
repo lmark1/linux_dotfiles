@@ -238,10 +238,10 @@ def GetCompilationInfoForHeaderSameDir(headerfile, database):
     for extension in SOURCE_EXTENSIONS:
         replacement_file = filename_no_ext + extension
         if os.path.exists(replacement_file):
-            compilation_info = database.GetCompilationInfoForFile(
+            compilation_info = database.getCompileCommands(
                 replacement_file)
-            if compilation_info.compiler_flags_:
-                return compilation_info
+            if compilation_info:
+                return compilation_info[0]
     return None
 
 def GetCompilationInfoForHeaderRos(headerfile, database):
@@ -334,6 +334,7 @@ def GetCompilationInfoForFile(filename, database):
 def Settings(**kwargs):
     filename = kwargs['filename']
     database = GetDatabase(GetCompilationDatabaseFolder(filename))
+    print(dir(database))
     if database:
         # Bear in mind that compilation_info.compiler_flags_ does NOT return a
         # python list, but a "list-like" StringVec object
@@ -355,7 +356,7 @@ def Settings(**kwargs):
     }
 
 if __name__ == '__main__':
-    fname = "~/mrs_workspace/src/uav_core/ros_packages/mrs_msgs/src/main.cpp"
+    fname = "/home/lmark/Workspace/carto_ws/src/uav_ros_cartographer_modules/cartographer/cartographer/cloud/map_builder_server_interface.h"
     if len(sys.argv) > 1:
         fname = sys.argv[1]
     print(Settings(filename = fname))
