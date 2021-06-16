@@ -10,7 +10,7 @@ APP_PATH=`dirname "$0"`
 APP_PATH=`( cd "$APP_PATH" && pwd )`
 
 sudo apt-get -y install caca-utils libimage-exiftool-perl w3m w3m-img
-sudo apt-get install ranger caca-utils highlight atool w3m poppler-utils mediainfo
+sudo apt-get -y install ranger caca-utils highlight atool w3m poppler-utils mediainfo
 
 mkdir -p ~/.config/ranger
 
