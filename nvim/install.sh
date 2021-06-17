@@ -21,6 +21,7 @@ sudo -H pip3 install rospkg
 sudo -H pip3 install wheel
 sudo -H pip3 install neovim
 sudo -H pip3 install neovim-remote
+sudo -H pip3 install grip
 sudo apt install -y fonts-powerline
 
 # source https://github.com/klaxalk/linux-setup/blob/master/appconfig/vim/install.sh
