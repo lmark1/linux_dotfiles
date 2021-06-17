@@ -7,6 +7,8 @@ All of the dotfiles used for setting up Ubuntu Linux 20.04 programs.
 * [NeoVim](https://github.com/neovim/neovim)
 * [tmux & tmuxinator](https://github.com/tmux/tmux)
 * [i3](https://i3wm.org/)
+* [ranger](https://github.com/ranger/ranger)
+* [docker](https://www.docker.com/)
 
 ## Instructions
 
