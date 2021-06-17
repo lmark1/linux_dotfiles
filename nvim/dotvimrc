@@ -7,6 +7,9 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
+Plugin 'JamshedVesuna/vim-markdown-preview'
+let vim_markdown_preview_toggle=2
+
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
