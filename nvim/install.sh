@@ -46,6 +46,8 @@ sudo apt-get -y install clangd-11
 sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-11 999
 sudo apt-get -y install libboost-all-dev
 
+sudo apt-get install -y markdown
+
 cd ~/.vim/bundle/YouCompleteMe/
 git submodule update --init --recursive
 python3 ./install.py --clangd-completer 
