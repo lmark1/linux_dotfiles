@@ -17,8 +17,18 @@ Plugin 'VundleVim/Vundle.vim'
 " Vim-friendly navigation of tmux environment
 Plugin 'christoomey/vim-tmux-navigator'
 
-" Pretty Vim indentations
-Plugin 'nathanaelkane/vim-indent-guides'
+" Vim Pretty indentations
+Plugin 'Yggdroot/indentLine'
+
+" Vim
+let g:indentLine_color_term = 239
+
+" GVim
+let g:indentLine_color_gui = '#A4E57E'
+
+" none X terminal
+let g:indentLine_color_tty_light = 7 " (default: 4)
+let g:indentLine_color_dark = 1 " (default: 2)
 
 " Pretty Vim status bar
 Plugin 'bling/vim-airline'
@@ -86,11 +96,6 @@ vnoremap <leader>P "+P
 set tabstop=2
 set shiftwidth=2
 set expandtab
-
-" " vim - indent - guides
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
 
 " " Set filetypes for launch and urdf files
 autocmd BufEnter *.launch :setlocal filetype=xml
