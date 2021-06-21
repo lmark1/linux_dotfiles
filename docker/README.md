@@ -1,5 +1,7 @@
 # Docker tutorial
 
+Most information found at the [Docker Curriculum](https://docker-curriculum.com/).
+
 ## Introduction
 
 | Description   |      Command      |
@@ -7,15 +9,15 @@
 | Run an example docker file |  ```docker run hello-world``` |
 | List all the containers (running and exited) |    ```docker ps -a```   |
 
-## Running Conatiners
+## Running Containers
 
 | Description   |      Command      |
 |:---------|:------------------------:|
-| Run a command in a docker container.<br/> ```-p``` publish containers ports to the host <br/> ```-d``` run conatiner in background <br/> ```--rm``` automatically delete the container once it exits <br/> ```-P``` publish all exposed ports | ```docker run -p0.0.0.0:80:80 -d ubuntu:latest``` |
+| Run a command in a docker container.<br/> ```-p``` publish containers ports to the host e.g. port 80 -> 8888 <br/> ```-d``` run conatiner in background <br/> ```--rm``` automatically delete the container once it exits <br/> ```-P``` publish all exposed ports <br/> ```--name``` name your container for easier use in subsequent commands <br/> ```-e``` set environment variables | ```docker run -p 8888:80 -d ubuntu:latest``` |
 | See all the ports that container is running | ```docker port [CONTAINER] ```|
 | Run a ```/bin/bash``` command in the ubuntu container <br/> ```-i``` connect the open I/O process streams  <br/> ```-t``` with an allocated TTY terminal |```docker run -it --name mydocker ubuntu /bin/bash```|
 
-## Managing containers
+## Managing Containers
 
 | Description   |      Command      |
 |:---------|:------------------------:|
@@ -24,9 +26,26 @@
 | Remove a conatiner | ```docker rm mydocker``` |
 | Remove all containers | ```docker rm $(docker ps -a -q)```|
 | Remove all stopped containers | ```docker container prune```|
+| List all docker containers | ```docker container ls``` |
+| Get all the logs| ```docker container logs [CONTAINER_NAME]```|
 
 ## Working with DockerHub registry
 
 | Description   |      Command      |
 |:---------|:------------------------:|
 |Fetch an image from the DockerHub registry | ```docker pull busybox```|
+| Search the DockerHub registry for images | ```docker search [IMAGE_NAME]``` |
+
+## Building Docker Images
+
+| Description   |      Command      |
+|:---------|:------------------------:|
+| Build a Docker image using a ```Dockerfile``` found in the current directory <br/> ```-t``` a tag name | ```docker build -t myusername/hello_docker .```|
+
+## Docker Network
+
+| Description   |      Command      |
+|:---------|:------------------------:|
+| Create a new ```bridge``` Docker network <br/> Allows containers connected to the same bridge to communicate | ```docker network create my-network``` |
+| List all docker networks | ```docker network ls``` |
+
