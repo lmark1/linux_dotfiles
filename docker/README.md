@@ -49,3 +49,10 @@ Most information found at the [Docker Curriculum](https://docker-curriculum.com/
 | Create a new ```bridge``` Docker network <br/> Allows containers connected to the same bridge to communicate | ```docker network create my-network``` |
 | List all docker networks | ```docker network ls``` |
 
+## docker-compose
+
+| Description   |      Command      |
+|:---------|:------------------------:|
+| Run ```docker-compose.yml``` in the current directory <br/> ```-d``` run in detached mode | ```docker-compose up -d``` |
+| Teardown the active compose <br/> ```-v``` delete volumes | ```docker-compose down -v``` |
+
