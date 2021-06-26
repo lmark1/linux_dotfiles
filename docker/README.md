@@ -28,12 +28,14 @@ Most information found at the [Docker Curriculum](https://docker-curriculum.com/
 | Remove all stopped containers | ```docker container prune```|
 | List all docker containers | ```docker container ls``` |
 | Get all the logs| ```docker container logs [CONTAINER_NAME]```|
+| Remove everything Docker related | ``` docker system prune --all --volumes```|
 
 ## Working with DockerHub registry
 
 | Description   |      Command      |
 |:---------|:------------------------:|
 |Fetch an image from the DockerHub registry | ```docker pull busybox```|
+|Push an image to the DockerHub registry | ```docker push [IMAGE_NAME]```|
 | Search the DockerHub registry for images | ```docker search [IMAGE_NAME]``` |
 
 ## Building Docker Images
