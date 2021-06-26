@@ -51,6 +51,10 @@ Most information found at the [Docker Curriculum](https://docker-curriculum.com/
 | Create a new ```bridge``` Docker network <br/> Allows containers connected to the same bridge to communicate | ```docker network create my-network``` |
 | List all docker networks | ```docker network ls``` |
 
+## Run GUI applications
+
+To run GUI application on the host append ```-e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix``` to the ```docker run``` command.  
+*NOTE* Before running the docker command make sure to disable access control on the host machine by running ```xhost +```. To enable access control run ```xhost -```.
 ## docker-compose
 
 | Description   |      Command      |
