@@ -26,12 +26,12 @@ export FANCY_CD="true"
 source $GIT_PATH/linux_dotfiles/zsh/general.sh
 
 # create alisases
-alias sb="source ~/.zshrc"
+alias sb='source ~/.zshrc'
 alias vim=runVim
-alias vimdiff="vim -d"
-alias cbt="catkin build --this"
-alias cbt_debug="catkin build --this --cmake-args -DCMAKE_BUILD_TYPE=Debug"
-alias catkin_src="roscd && cd ../src"
+alias vimdiff='vim -d'
+alias cbt='catkin build --this'
+alias cbt_debug='catkin build --this --cmake-args -DCMAKE_BUILD_TYPE=Debug'
+alias catkin_src='roscd && cd ../src'
 alias ra=ranger
 
 # Vi mode in ZSH
