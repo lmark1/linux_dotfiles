@@ -44,7 +44,7 @@ echo "$(docker-compose --version)"
 
 # Add docker user to sudo group
 sudo groupadd docker
-sudo usermod -aA docker ${USER} 
+sudo usermod -aG docker ${USER} 
 
 # Setting up NVIDIA Container Toolkit
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
