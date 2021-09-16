@@ -38,6 +38,13 @@ cd ~/.vim/bundle/YouCompleteMe
 
 ## Troubleshooting 
 
+### How to make Lenovo Legion work properly for Ubuntu Linux 20.04 - 5.8.0-50-generic kernel - Suspend
+
+Install nvidia 450 drivers:
+```bash
+sudo apt install nvidia-driver-450-server
+```
+
 ### How to make Lenovo Legion work properly for Ubuntu Linux 20.04 - 5.8.0-50-generic kernel - Realtek RTL8822BE WiFi Adapter?
 
 Credits to [linuxmint.com - lenovo legion y530 wifi problem](https://forums.linuxmint.com/viewtopic.php?t=345409&start=20).
