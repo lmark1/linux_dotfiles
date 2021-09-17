@@ -280,8 +280,11 @@ def GetCompilationInfoForHeaderRos(headerfile, database):
                         for line in fh:
                             if pattern.match(line):
                                 file.write(" YES\n\n")
-                                compilation_info = database.GetCompilationInfoForFile(
-                                    path + os.path.sep + src_filename)
+                                replacement_file = path + os.path.sep + src_filename
+                                try:
+                                    compilation_info = database.GetCompilationInfoForFile(replacement_file)
+                                except:
+                                    return GetCompilationInfoForFile(replacement_file, database)
                                 if compilation_info.compiler_flags_:
                                     return compilation_info
                         file.write("\n")
