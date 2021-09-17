@@ -43,7 +43,6 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 echo "$(docker-compose --version)"
 
 # Add docker user to sudo group
-sudo groupadd docker
 sudo usermod -aG docker ${USER} 
 
 # Setting up NVIDIA Container Toolkit
