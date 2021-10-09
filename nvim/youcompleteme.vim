@@ -22,7 +22,7 @@ let g:ycm_clangd_args = ['-log=verbose', '-pretty']
 " make ros and youcompleteme be friends
 let g:ycm_semantic_triggers = {
 \   'roslaunch' : ['="', '$(', '/'],
-\   'rosmsg,rossrv,rosaction' : ['re!^', '/'],
+\   'rosmsg,rossrv,rosaction' : ['re!^', '/']
 \ }
 
 " will allow youcompleteme to work on vimwiki files

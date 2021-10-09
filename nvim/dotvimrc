@@ -53,6 +53,9 @@ source $GIT_PATH/linux_dotfiles/nvim/youcompleteme.vim
 Plugin 'klaxalk/vim-ros'
 source $GIT_PATH/linux_dotfiles/nvim/vim-ros.vim
 
+" autoformatting c++ code
+Plugin 'https://github.com/rhysd/vim-clang-format'
+
 " better highlighting for c++11/14/17
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
@@ -92,6 +95,8 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
+map <F5> :w <CR> :!g++ % -std=c++17 -o %< && ./%< <CR>
+
 " " Setup tabs
 set tabstop=2
 set shiftwidth=2
@@ -123,3 +128,18 @@ nmap <leader>t :tabedit<cr>:NERDTreeToggle<cr>
 
 " nerd tree toggle binding
 nnoremap <leader>n :NERDTreeToggle<CR>
+
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+
+inoremap <expr> ) getline('.')[getpos('.')[2] - 1] == ')' ? '<Right>' : ')'
+inoremap <expr> } getline('.')[getpos('.')[2] - 1] == '}' ? '<Right>' : '}'
+inoremap <expr> ] getline('.')[getpos('.')[2] - 1] == ']' ? '<Right>' : ']'
+inoremap <expr> ' getline('.')[getpos('.')[2] - 1] == ''' ? '<Right>' : '''
+inoremap <expr> " getline('.')[getpos('.')[2] - 1] == '"' ? '<Right>' : '"'
+
