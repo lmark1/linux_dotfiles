@@ -140,6 +140,6 @@ inoremap {;<CR> {<CR>};<ESC>O
 inoremap <expr> ) getline('.')[getpos('.')[2] - 1] == ')' ? '<Right>' : ')'
 inoremap <expr> } getline('.')[getpos('.')[2] - 1] == '}' ? '<Right>' : '}'
 inoremap <expr> ] getline('.')[getpos('.')[2] - 1] == ']' ? '<Right>' : ']'
-inoremap <expr> ' getline('.')[getpos('.')[2] - 1] == ''' ? '<Right>' : '''
-inoremap <expr> " getline('.')[getpos('.')[2] - 1] == '"' ? '<Right>' : '"'
-
+" inoremap <expr> ' getline('.')[getpos('.')[2] - 1] == ''' ? '<Right>' : '''
+" Doesnt work for some reason
+" inoremap <expr> " getline('.')[getpos('.')[2] - 1] == '"' ? '<Right>' : '"'
