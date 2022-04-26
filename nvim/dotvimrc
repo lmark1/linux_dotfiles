@@ -59,6 +59,9 @@ Plugin 'https://github.com/rhysd/vim-clang-format'
 " better highlighting for c++11/14/17
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
+Plugin 'ctrlpvim/ctrlp.vim'
+source $GIT_PATH/linux_dotfiles/nvim/ctrlp.vim
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
