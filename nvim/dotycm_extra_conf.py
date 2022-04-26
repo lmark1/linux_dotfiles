@@ -344,7 +344,12 @@ def GetCompilationInfoForFile(filename, database):
 
 def Settings(**kwargs):
     filename = kwargs['filename']
-    database = GetDatabase(GetCompilationDatabaseFolder(filename))
+    dbase_folder = GetCompilationDatabaseFolder(filename)
+    if not dbase_folder:
+        #TODO(lmark) maybe put an alternativ db folder here
+        # dbase_folder = "/home/lmark/Workspace/uav_ws/src/uav_ros_simulation_modules/ardupilot/build/sitl"
+        pass
+    database = GetDatabase(dbase_folder)
     if database:
         # Bear in mind that compilation_info.compiler_flags_ does NOT return a
         # python list, but a "list-like" StringVec object

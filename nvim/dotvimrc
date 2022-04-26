@@ -64,6 +64,10 @@ Plugin 'https://github.com/rhysd/vim-clang-format'
 
 " better highlighting for c++11/14/17
 Plugin 'octol/vim-cpp-enhanced-highlight'
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_experimental_template_highlight = 1
 
 " find files in vim
 Plugin 'ctrlpvim/ctrlp.vim'
