@@ -7,9 +7,9 @@ let g:ycm_key_list_stop_completion = ['<C-y>', '<CR>']
 
 nmap <leader>yfw <Plug>(YCMFindSymbolInWorkspace)
 nmap <leader>yfw <Plug>(YCMFindSymbolInDocument)
-nmap <leader>yr :YcmCompleter RefactorRename i
+" nmap <leader>yr :YcmCompleter RefactorRename
 
-" let g:ycm_python_binary_path = '/usr/bin/python3'
+let g:ycm_python_binary_path = '/usr/bin/python3'
 
 " enable YCM refactoring for C-style languages using clangd
 let g:ycm_clangd_args = ['-log=verbose', '-pretty']

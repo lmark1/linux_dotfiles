@@ -1,6 +1,12 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+"map the leader key
+nnoremap , <NOP>
+let mapleader = ","
+nmap <space> ,
+let maplocalleader = "`"
+
 " set the runtime path to include Vundle and initialize
 set rtp+=$GIT_PATH/linux_dotfiles/submodules/Vundle.vim
 call vundle#begin()
@@ -59,8 +65,12 @@ Plugin 'https://github.com/rhysd/vim-clang-format'
 " better highlighting for c++11/14/17
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
+" find files in vim
 Plugin 'ctrlpvim/ctrlp.vim'
 source $GIT_PATH/linux_dotfiles/nvim/ctrlp.vim
+
+Plugin 'gabesoft/vim-ags'
+source $GIT_PATH/linux_dotfiles/nvim/vim-ags.vim
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -78,7 +88,9 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 inoremap jk <ESC>
-let mapleader = "'"
+
+
+
 syntax on
 set number
 set noswapfile
@@ -133,7 +145,7 @@ nmap <leader>t :tabedit<cr>:NERDTreeToggle<cr>
 nnoremap <leader>n :NERDTreeToggle<CR>
 
 inoremap " ""<left>
-inoremap ' ''<left>
+"inoremap ' ''<left>
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
@@ -146,3 +158,5 @@ inoremap <expr> ] getline('.')[getpos('.')[2] - 1] == ']' ? '<Right>' : ']'
 " inoremap <expr> ' getline('.')[getpos('.')[2] - 1] == ''' ? '<Right>' : '''
 " Doesnt work for some reason
 " inoremap <expr> " getline('.')[getpos('.')[2] - 1] == '"' ? '<Right>' : '"'
+
+colorscheme desert

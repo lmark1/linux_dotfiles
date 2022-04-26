@@ -14,7 +14,7 @@ var2=`lsb_release -r | awk '{ print $2 }'`
 [ "$var2" = "$var1" ] && export BEAVER=1
 
 sudo apt install -y python3-pip
-sudo apt-get -y install neovim
+# sudo apt-get -y install neovim
 
 sudo apt-get -y install libncurses5-dev libgtk2.0-dev libatk1.0-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev python3-dev clang-format
 sudo -H pip3 install rospkg
