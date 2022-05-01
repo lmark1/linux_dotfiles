@@ -16,3 +16,6 @@ ln -sf $APP_PATH/dotvimrc ~/.vimrc
 # link .ycm_extra_conf.py
 ln -fs $APP_PATH/dotycm_extra_conf.py ~/.ycm_extra_conf.py
 ln -fs $APP_PATH/default_ycm_extra_conf.py ~/.vim/default_ycm_extra_conf.py
+
+# Link clang-tidy
+ln -sf $APP_PATH/dotclang-tidy ~/.clang-tidy
