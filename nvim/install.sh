@@ -15,12 +15,11 @@ var2=`lsb_release -r | awk '{ print $2 }'`
 
 sudo apt install -y python3-pip
 # sudo apt-get -y install neovim
+sudo apt-get install vim-gtk3 -y
 
 sudo apt-get -y install libncurses5-dev libgtk2.0-dev libatk1.0-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev python3-dev clang-format
 sudo -H pip3 install rospkg
 sudo -H pip3 install wheel
-sudo -H pip3 install neovim
-sudo -H pip3 install neovim-remote
 sudo -H pip3 install grip
 sudo apt install -y fonts-powerline
 
