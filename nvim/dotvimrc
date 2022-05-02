@@ -163,4 +163,4 @@ inoremap <expr> ] getline('.')[getpos('.')[2] - 1] == ']' ? '<Right>' : ']'
 " Doesnt work for some reason
 " inoremap <expr> " getline('.')[getpos('.')[2] - 1] == '"' ? '<Right>' : '"'
 
-colorscheme desert
+colorscheme elflord

@@ -19,3 +19,6 @@ ln -fs $APP_PATH/default_ycm_extra_conf.py ~/.vim/default_ycm_extra_conf.py
 
 # Link clang-tidy
 ln -sf $APP_PATH/dotclang-tidy ~/.clang-tidy
+
+# Link clang-format
+ln -sf $APP_PATH/dotclang-format ~/.clang-format
