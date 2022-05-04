@@ -35,7 +35,7 @@ markup=none
 # See the script for details.
 [volume]
 label=VOL
-#label=♪
+label=♪
 instance=Master
 #instance=PCM
 interval=1
@@ -46,7 +46,7 @@ signal=10
 # The type defaults to "mem" if the instance is not specified.
 [memory]
 label=MEM
-separator=false
+separator=true
 interval=30
 
 # Disk usage
@@ -87,7 +87,7 @@ min_width=CPU: 100.00%
 # The battery instance defaults to 0.
 [battery]
 label=BAT
-#label=⚡
+label=⚡
 #instance=1
 interval=30
 
@@ -117,9 +117,9 @@ interval=1
 # Support multiple chips, though lm-sensors.
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
-#[temperature]
-#label=TEMP
-#interval=10
+[temperature]
+label=TEMP
+interval=10
 
 # Key indicators
 #

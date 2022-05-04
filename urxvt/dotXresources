@@ -39,7 +39,7 @@ URxvt.keysym.Control-0: \033[27;5;48~
 
 ! COLORSCHEME_DARK
 
-URxvt.background: [100]#121212
+URxvt.background: [100]#3a3a3a
 URxvt.foreground: #dddddd
 
 ! black
