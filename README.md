@@ -9,6 +9,7 @@ All of the dotfiles used for setting up Ubuntu Linux 20.04 programs.
 * [i3](https://i3wm.org/)
 * [ranger](https://github.com/ranger/ranger)
 * [docker](https://www.docker.com/)
+* [urxvt](https://wiki.archlinux.org/title/rxvt-unicode) - Has a server so user is able to close the terminal without terminating all the tmux sessions \o/
 
 ## Instructions
 
