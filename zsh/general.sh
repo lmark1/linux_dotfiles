@@ -16,7 +16,7 @@ if [ -z $TMUX ]; then
 
   # and the symlinklist does not exist
   if [ ! -f "$SYMLINK_ARRAY_PATH" ]; then
-
+    echo "CREATE"
     # create the symlink list
     $GIT_PATH/linux_dotfiles/zsh/detacher.sh $GIT_PATH/linux_dotfiles/zsh/createRosSymlinkDatabase.sh
   fi
@@ -187,34 +187,34 @@ zshexit() {
   forceKillTmuxSession "T$PPID"
 }
 
-# VIM alias for running vim in tmux and in servermode
-runVim() {
-
-  VIM_CMD=$(echo "$EDITOR ${@}")
-
-  # if the tmux session does not exist, create new and run vim in it
-  if [ -z $TMUX ]; then
-
-    SESSION_NAME="T$PPID"
-
-    # if there is a tmux session with the same name as the current bashpid
-    num=`$TMUX_BIN ls 2> /dev/null | grep "$SESSION_NAME" | wc -l`
-    if [ "$num" -gt "0" ]; then
-
-      ID=`$TMUX_BIN new-window -t "$SESSION_NAME" -a -P`
-      sleep 1.0
-      $TMUX_BIN send-keys -t $ID "$VIM_CMD" C-m
-      $TMUX_BIN -2 attach-session -t "$SESSION_NAME"
-
-    else
-
-      $TMUX_BIN new-session -s "$SESSION_NAME" -d "$VIM_CMD" \; attach
-
-    fi
-
-  else
-
-    zsh -c "$VIM_CMD"
-
-  fi
-}
+# # VIM alias for running vim in tmux and in servermode
+# runVim() {
+# 
+#   VIM_CMD=$(echo "$EDITOR ${@}")
+# 
+#   # if the tmux session does not exist, create new and run vim in it
+#   if [ -z $TMUX ]; then
+# 
+#     SESSION_NAME="T$PPID"
+# 
+#     # if there is a tmux session with the same name as the current bashpid
+#     num=`$TMUX_BIN ls 2> /dev/null | grep "$SESSION_NAME" | wc -l`
+#     if [ "$num" -gt "0" ]; then
+# 
+#       ID=`$TMUX_BIN new-window -t "$SESSION_NAME" -a -P`
+#       sleep 1.0
+#       $TMUX_BIN send-keys -t $ID "$VIM_CMD" C-m
+#       $TMUX_BIN -2 attach-session -t "$SESSION_NAME"
+# 
+#     else
+# 
+#       $TMUX_BIN new-session -s "$SESSION_NAME" -d "$VIM_CMD" \; attach
+# 
+#     fi
+# 
+#   else
+# 
+#     zsh -c "$VIM_CMD"
+# 
+#   fi
+# }
