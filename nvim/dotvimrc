@@ -163,4 +163,8 @@ inoremap <expr> ] getline('.')[getpos('.')[2] - 1] == ']' ? '<Right>' : ']'
 " Doesnt work for some reason
 " inoremap <expr> " getline('.')[getpos('.')[2] - 1] == '"' ? '<Right>' : '"'
 
+" Move lines up and down :o
+nnoremap <S-j> :m+<CR>==
+nnoremap <S-k> :m-2<CR>==
+
 colorscheme elflord
