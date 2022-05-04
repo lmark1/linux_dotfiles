@@ -130,7 +130,7 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
-map <F5> :w <CR> :!g++ % -std=c++17 -o %< && ./%< <CR>
+map <F9> :w <CR> :!g++ % -std=c++17 -o %< && ./%< <CR>
 
 " " Set filetypes for launch and urdf files
 autocmd BufEnter *.launch :setlocal filetype=xml
@@ -179,3 +179,4 @@ nnoremap <S-j> :m+<CR>==
 nnoremap <S-k> :m-2<CR>==
 
 colorscheme elflord
+
