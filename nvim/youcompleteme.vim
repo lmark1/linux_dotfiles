@@ -46,6 +46,7 @@ au FileType c,cpp,hpp,h nnoremap <leader>. :YcmCompleter GoTo<cr>
 " scrolling in autocomplete menu with j and k, or c-j and c-k
 " should work only when the menu has been entered either by tab or arrows
 set completeopt+=noinsert
+set completeopt-=preview
 inoremap <expr> j ((pumvisible() && !empty(v:completed_item))?("\<C-n>"):("j"))
 inoremap <expr> <C-j> ((pumvisible())?("\<C-n>"):("\<C-j>"))
 inoremap <expr> k ((pumvisible() && !empty(v:completed_item))?("\<C-p>"):("k"))
@@ -82,10 +83,6 @@ function! YcmLocationList()
   endif
 endfunction
 nnoremap <leader>yll :call YcmLocationList()<cr>
-
-let g:ycm_add_preview_to_completeopt = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
 
 nnoremap <F5> :YcmForceCompileAndDiagnostics<cr> :lop<cr>
 
