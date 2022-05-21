@@ -178,5 +178,9 @@ inoremap <expr> ] getline('.')[getpos('.')[2] - 1] == ']' ? '<Right>' : ']'
 nnoremap <S-j> :m+<CR>==
 nnoremap <S-k> :m-2<CR>==
 
+" Move tabs "
+nnoremap <S-h> gT
+nnoremap <S-l> gt
+
 colorscheme elflord
 
