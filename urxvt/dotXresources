@@ -1,7 +1,10 @@
 ! Credits to https://github.com/klaxalk/linux-setup/blob/master/appconfig/urxvt/ :) 
 ! EXTENSIONS are stored at /usr/lib/urxvt/perl
-
 URxvt.font: xft:Ubuntu Mono derivative Powerline:size=13
+URxvt*scrollTtyKeypress:      true
+URxvt*scrollTtyOutput:        false 
+URxvt*scrollWithBuffer:       false
+URxvt*skipScroll:             true
 
 URxvt.scrollBar: false
 
