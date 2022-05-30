@@ -23,8 +23,8 @@ Plugin 'VundleVim/Vundle.vim'
 " Vim-friendly navigation of tmux environment
 Plugin 'christoomey/vim-tmux-navigator'
 
-" Vim Pretty indentations
-Plugin 'Yggdroot/indentLine'
+" Vim Pretty indentations - cause ycm flickering
+" "Plugin 'Yggdroot/indentLine'
 
 " Vim
 let g:indentLine_color_term = 239
@@ -183,4 +183,3 @@ nnoremap <S-h> gT
 nnoremap <S-l> gt
 
 colorscheme elflord
-
