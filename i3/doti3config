@@ -207,3 +207,6 @@ bindsym XF86AudioPrev exec playerctl previous
 exec xrandr --output eDP-1-1 --set "PRIME Synchronization" 1
 
 bindsym $mod+Shift+p exec ~/.config/i3/layout_manager.sh
+
+# Enable the touchpad tapping
+exec xinput set-prop "ELAN061B:00 04F3:309E Touchpad" "libinput Tapping Enabled" 1
